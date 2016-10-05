@@ -171,7 +171,15 @@ IdentityGroup = [
     cfg.BoolOpt('admin_domain_scope',
                 default=False,
                 help="Whether keystone identity v3 policy required "
-                     "a domain scoped token to use admin APIs")
+                     "a domain scoped token to use admin APIs"),
+    cfg.StrOpt('rbac_role',
+               default='admin',
+               help="RBAC role."),
+    cfg.BoolOpt('rbac_flag',
+                default=False,
+                help="Consider RBAC testing, if it is set to True "),
+    cfg.StrOpt('rbac_policy_file',
+               help="RBAC Policy YAML File Path"),
 ]
 
 service_clients_group = cfg.OptGroup(name='service-clients',
